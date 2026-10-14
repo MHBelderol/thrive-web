@@ -1,0 +1,27 @@
+/*
+ * React-specific overrides for the CONSULT template.
+ * Loaded after bootstrap.min.css and style.css (both kept as in the original template).
+ */
+
+/* Original markup used an inline `border-color: ... !important`, which React inline styles can't express. */
+.footer-copyright {
+    border-color: rgba(255, 255, 255, .1) !important;
+}
+
+/* Template had `.dropdown-menu.m-0`; React-Bootstrap's NavDropdown doesn't expose the menu className. */
+.navbar .dropdown-menu {
+    margin: 0;
+}
+
+/* Back-to-top: replaces jQuery fadeIn/fadeOut('slow') with a CSS transition. */
+.back-to-top {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .6s, visibility .6s;
+}
+
+.back-to-top.back-to-top-visible {
+    opacity: 1;
+    visibility: visible;
+}

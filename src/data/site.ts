@@ -1,0 +1,24 @@
+import type { SocialLink } from '../types'
+
+/** Central place for brand/contact info — edit here to rebrand the whole site. */
+export const site = {
+  name: 'consult',
+  brandName: 'CONSULT',
+  siteName: 'Your Site Name',
+  titleSuffix: 'CONSULT - Consultancy Website Template',
+  email: 'info@example.com',
+  phone: '+012 345 6789',
+  footerPhone: '+012 345 67890',
+  address: '123 Street, New York, USA',
+  mapEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd',
+}
+
+export const topbarLinks: string[] = ['FAQs', 'Support', 'Privacy', 'Policy', 'Career']
+
+export const socialLinks: SocialLink[] = [
+  { label: 'Twitter', icon: 'fab fa-twitter', href: '#' },
+  { label: 'Facebook', icon: 'fab fa-facebook-f', href: '#' },
+  { label: 'LinkedIn', icon: 'fab fa-linkedin-in', href: '#' },
+  { label: 'Instagram', icon: 'fab fa-instagram', href: '#' },
+]
