@@ -2,10 +2,10 @@ import type { SocialLink } from '../types'
 
 /** Central place for brand/contact info — edit here to rebrand the whole site. */
 export const site = {
-  name: 'consult',
-  brandName: 'CONSULT',
-  siteName: 'Your Site Name',
-  titleSuffix: 'CONSULT - Consultancy Website Template',
+  name: 'thrive',
+  brandName: 'THRIVE',
+  siteName: 'THRIVE',
+  titleSuffix: 'THRIVE - Offshore Services',
   email: 'info@example.com',
   phone: '+012 345 6789',
   footerPhone: '+012 345 67890',

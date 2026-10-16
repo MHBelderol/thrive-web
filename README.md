@@ -36,8 +36,26 @@ Consult/              original static HTML template (reference only, not built)
 
 ## Deployment
 
-The app uses `BrowserRouter`, so the host must serve `index.html` for unknown paths (SPA fallback),
-e.g. a rewrite rule on Netlify/Vercel/Azure Static Web Apps or `try_files $uri /index.html` on nginx.
+The site is deployed to GitHub Pages by `.github/workflows/deploy.yml`:
+**https://mhbelderol.github.io/thrive-web/**
+
+- **Pull requests to `main`** run lint + build only (no deploy).
+- **Pushes to `main`** run lint + build, then deploy to GitHub Pages.
+- One-time setup: repo **Settings → Pages → Source → GitHub Actions**.
+
+Subpath handling:
+
+- `vite.config.ts` sets `base: '/thrive-web/'` for production builds only (`npm run dev` still serves at `/`).
+- `BrowserRouter` uses `basename={import.meta.env.BASE_URL}`, and the favicon uses `%BASE_URL%`.
+- If the repo is renamed or a custom domain is added, update `base` in `vite.config.ts`.
+
+SPA fallback: GitHub Pages has no rewrite rules, so the workflow copies `dist/index.html` to
+`dist/404.html`. Deep links and refreshes (e.g. `/thrive-web/about`) then load the app and React Router
+renders the right page. Note that such requests return an HTTP 404 status even though the page
+displays correctly.
+
+To preview the production build locally: `npm run build && npm run preview`, then open
+`http://localhost:4173/thrive-web/`.
 
 ## License / attribution
 
