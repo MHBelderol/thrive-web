@@ -1,9 +1,11 @@
 /********** Template CSS **********/
 :root {
-    --primary: #F3525A;
-    --secondary: #F6F6F6;
+    --primary: #F095D7;
+    --secondary: #7A7479;
+    --secondary-soft: #F7F1F5;
+    --gradient: linear-gradient(135deg, #F095D7 0%, #7A7479 100%);
     --light: #FFFFFF;
-    --dark: #152440;
+    --dark: #2B2229;
 }
 
 h1,
@@ -119,7 +121,6 @@ h6,
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(21, 36, 64, .7);
     z-index: 1;
 }
 
@@ -166,7 +167,7 @@ h6,
     left: 0;
     background: var(--light);
     border-radius: 100% 100% 0 0;
-    box-shadow: 0px -10px 5px #EEEEEE;
+    box-shadow: 0px -10px 5px #F3E9F0;
     transition: .5s;
 }
 

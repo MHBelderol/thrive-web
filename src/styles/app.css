@@ -25,3 +25,152 @@
     opacity: 1;
     visibility: visible;
 }
+
+/* ---- Palette: primary #F095D7, secondary #7A7479 ---- */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #FFFFFF;
+}
+
+.btn-primary {
+    background-image: var(--gradient);
+    background-size: 160% 100%;
+    background-position: left center;
+    border-color: transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-position: right center;
+    border-color: transparent;
+}
+
+.btn-secondary {
+    background-image: linear-gradient(135deg, #7A7479 0%, #A8647F 100%);
+    border-color: transparent;
+}
+
+/* Light section backgrounds: soft tint mixing both colors (secondary itself is a mid-grey). */
+.bg-secondary {
+    background-color: var(--secondary-soft) !important;
+}
+
+.bg-primary {
+    background-image: var(--gradient);
+}
+
+.bg-dark {
+    background-image: linear-gradient(135deg, #2B2229 0%, #4a3a47 100%);
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: #B7B0B5 !important;
+}
+
+.service-item.bg-secondary:hover {
+    background-image: var(--gradient);
+}
+
+.bg-primary.text-secondary,
+.bg-primary .text-secondary {
+    color: #FFFFFF !important;
+}
+
+.navbar-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.sticky-top .navbar-logo {
+    height: 48px;
+}
+
+
+/* Team slider: manual scroll only (no autoplay). Cards share one fixed portrait size. */
+.team-slider-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.team-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* While the buttons animate the scroll, snapping is paused so the two don't fight. */
+.team-slider-track.is-animating {
+    scroll-snap-type: none;
+}
+
+.team-slider-slide {
+    flex: 0 0 calc((100% - 48px) / 3);
+    scroll-snap-align: start;
+}
+
+@media (max-width: 991.98px) {
+    .team-slider-slide {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .team-slider-slide {
+        flex-basis: 100%;
+    }
+}
+
+.team-slider .team-item {
+    aspect-ratio: 2 / 3;
+    background-color: var(--secondary-soft);
+}
+
+/* The image is pinned to the card, so its own size can never change the card or shift on hover. */
+.team-slider .team-item img,
+.team-slider .team-item:hover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    transform: none;
+    transition: none;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Landscape photos are shown whole instead of being cropped. */
+.team-slider .team-item img.team-img-landscape,
+.team-slider .team-item:hover img.team-img-landscape {
+    object-fit: contain;
+    object-position: center;
+}
+
+.team-slider-btn {
+    position: absolute;
+    top: 45%;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+.team-slider-prev {
+    left: -22px;
+}
+
+.team-slider-next {
+    right: -22px;
+}

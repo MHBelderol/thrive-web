@@ -1,6 +1,6 @@
-import { Carousel } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { carouselSlides } from '../../data/carousel'
+import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { carouselSlides } from "../../data/carousel";
 
 export default function HeroCarousel() {
   return (
@@ -13,10 +13,16 @@ export default function HeroCarousel() {
               <div className="p-3" style={{ maxWidth: 900 }}>
                 <h5 className="text-white text-uppercase">{slide.subtitle}</h5>
                 <h1 className="display-1 text-white mb-md-4">{slide.title}</h1>
-                <Link to="/contact" className="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill">
-                  Get Quote
+                <Link
+                  to="/contact"
+                  className="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill"
+                >
+                  Let's Talk!
                 </Link>
-                <Link to="/contact" className="btn btn-secondary py-md-3 px-md-5 rounded-pill">
+                <Link
+                  to="/contact"
+                  className="btn btn-secondary py-md-3 px-md-5 rounded-pill"
+                >
                   Contact Us
                 </Link>
               </div>
@@ -25,5 +31,5 @@ export default function HeroCarousel() {
         ))}
       </Carousel>
     </div>
-  )
+  );
 }

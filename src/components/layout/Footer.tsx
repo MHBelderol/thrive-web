@@ -1,7 +1,7 @@
-import { useState, type FormEvent } from 'react'
-import { Link } from 'react-router-dom'
-import { footerLinks } from '../../data/navigation'
-import { site, socialLinks } from '../../data/site'
+import { useState, type FormEvent } from "react";
+import { Link } from "react-router-dom";
+import { footerLinks } from "../../data/navigation";
+import { site, socialLinks } from "../../data/site";
 
 function LinkList({ title }: { title: string }) {
   return (
@@ -11,7 +11,7 @@ function LinkList({ title }: { title: string }) {
         {footerLinks.map((link, i) => (
           <Link
             key={link.to}
-            className={`text-secondary${i < footerLinks.length - 1 ? ' mb-2' : ''}`}
+            className={`text-secondary${i < footerLinks.length - 1 ? " mb-2" : ""}`}
             to={link.to}
           >
             <i className="bi bi-arrow-right text-primary me-2"></i>
@@ -20,17 +20,17 @@ function LinkList({ title }: { title: string }) {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("");
 
   const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     // TODO: connect the newsletter sign-up to a backend / mailing list service.
-    setEmail('')
-  }
+    setEmail("");
+  };
 
   return (
     <>
@@ -38,7 +38,11 @@ export default function Footer() {
         <div className="row g-5">
           <div className="col-12 text-center">
             <h1 className="display-5 mb-4">Stay Update!!!</h1>
-            <form className="mx-auto" style={{ maxWidth: 600 }} onSubmit={handleSubscribe}>
+            <form
+              className="mx-auto"
+              style={{ maxWidth: 600 }}
+              onSubmit={handleSubscribe}
+            >
               <div className="input-group">
                 <input
                   type="email"
@@ -68,13 +72,26 @@ export default function Footer() {
               {site.address}
             </p>
             <p className="mb-2">
+              <i className="bi bi-geo-alt text-primary me-2"></i>
+              {site.country}
+            </p>
+            <p className="mb-2">
               <i className="bi bi-envelope-open text-primary me-2"></i>
-              {site.email}
+              <a className="text-secondary" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>
             </p>
-            <p className="mb-0">
-              <i className="bi bi-telephone text-primary me-2"></i>
-              {site.footerPhone}
-            </p>
+            {site.phones.map((p, i) => (
+              <p
+                key={p.tel}
+                className={i < site.phones.length - 1 ? "mb-2" : "mb-0"}
+              >
+                <i className="bi bi-telephone text-primary me-2"></i>
+                <a className="text-secondary" href={`tel:${p.tel}`}>
+                  {p.label}: {p.display}
+                </a>
+              </p>
+            ))}
           </div>
           <div className="col-lg-3 col-md-6">
             <h3 className="text-white mb-4">Follow Us</h3>
@@ -82,8 +99,10 @@ export default function Footer() {
               {socialLinks.map((social, i) => (
                 <a
                   key={social.label}
-                  className={`btn btn-lg btn-primary btn-lg-square rounded-circle${i < socialLinks.length - 1 ? ' me-2' : ''}`}
+                  className={`btn btn-lg btn-primary btn-lg-square rounded-circle${i < socialLinks.length - 1 ? " me-2" : ""}`}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                 >
                   <i className={`${social.icon} fw-normal`}></i>
@@ -95,21 +114,24 @@ export default function Footer() {
       </div>
       <div className="container-fluid bg-dark text-secondary text-center border-top footer-copyright py-4 px-5">
         <p className="m-0">
-          &copy;{' '}
+          &copy;{" "}
           <Link className="text-secondary border-bottom" to="/">
             {site.siteName}
           </Link>
-          . All Rights Reserved.{' '}
+          . All Rights Reserved.{" "}
           {/*
             LICENSE (CC BY 4.0, HTML Codex): the author's attribution link below MUST remain intact.
             Do not remove or hide "Designed by HTML Codex". See LICENSE.txt in the project root.
           */}
-          Designed by{' '}
-          <a className="text-secondary border-bottom" href="https://htmlcodex.com">
+          Designed by{" "}
+          <a
+            className="text-secondary border-bottom"
+            href="https://htmlcodex.com"
+          >
             HTML Codex
           </a>
         </p>
       </div>
     </>
-  )
+  );
 }

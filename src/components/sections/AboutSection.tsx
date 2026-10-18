@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { aboutFeatures } from '../../data/services'
-import { site } from '../../data/site'
+import { Link } from "react-router-dom";
+import { aboutFeatures } from "../../data/services";
+import { site } from "../../data/site";
 
 export default function AboutSection() {
   return (
@@ -10,17 +10,18 @@ export default function AboutSection() {
           <h1 className="display-5 mb-4">
             Welcome To <span className="text-primary">{site.brandName}</span>
           </h1>
-          <h4 className="text-primary mb-4">
-            Diam dolor diam ipsum sit. Clita erat ipsum et lorem stet no lorem sit clita duo justo magna dolore
-          </h4>
+          <h4 className="text-primary mb-4">Who is Thrive & Co. PH?</h4>
           <p className="mb-4">
-            Et stet ipsum nonumy rebum eos justo, accusam invidunt aliquyam stet magna at et sanctus, vero sea sit amet
-            dolores, sit dolor duo invidunt dolor, kasd rebum consetetur diam invidunt erat stet. Accusam nonumy lorem
-            kasd eirmod. Justo clita sadipscing ea invidunt rebum sadipscing consetetur. Amet diam amet amet sanctus
-            sanctus invidunt erat ipsum eirmod.
+            Thrive & Co. PH is a Philippine-based management firm that helps
+            businesses manage daily operations, strengthen their online
+            presence, and build their teams through virtual assistance, digital
+            marketing, and short-term rental support.
           </p>
-          <Link to="/contact" className="btn btn-primary py-md-3 px-md-5 rounded-pill">
-            Get A Quote
+          <Link
+            to="/contact"
+            className="btn btn-primary py-md-3 px-md-5 rounded-pill"
+          >
+            Let's Talk
           </Link>
         </div>
         <div className="col-lg-6">
@@ -28,7 +29,7 @@ export default function AboutSection() {
             {aboutFeatures.map((feature, i) => (
               <div
                 key={feature.title}
-                className={`d-flex text-white${i < aboutFeatures.length - 1 ? ' mb-5' : ''}`}
+                className={`d-flex text-white${i < aboutFeatures.length - 1 ? " mb-5" : ""}`}
               >
                 <div
                   className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle mx-auto mb-4"
@@ -46,5 +47,5 @@ export default function AboutSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }

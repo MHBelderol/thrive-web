@@ -5,6 +5,7 @@ import { navItems } from '../../data/navigation'
 import { site } from '../../data/site'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { useScrolledPast } from '../../hooks/useScrolledPast'
+import logo from '../../assets/img/main-logo.png'
 import type { NavDropdownItem, NavItem } from '../../types'
 
 const isDropdown = (item: NavItem): item is NavDropdownItem => 'children' in item
@@ -64,10 +65,7 @@ export default function AppNavbar() {
       className={`shadow-sm px-5 py-3 py-lg-0${isSticky ? ' sticky-top' : ''}`}
     >
       <Navbar.Brand as={Link} to="/" className="p-0" onClick={close}>
-        <h1 className="m-0 text-uppercase text-primary">
-          <i className="far fa-smile text-primary me-2"></i>
-          {site.name}
-        </h1>
+        <img src={logo} alt={site.name} className="navbar-logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarCollapse" />
       <Navbar.Collapse id="navbarCollapse">
