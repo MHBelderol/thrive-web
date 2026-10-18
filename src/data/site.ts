@@ -13,7 +13,7 @@ export const site = {
     { label: "PH", display: "+63 929 237 8850", tel: "+639292378850" },
     { label: "US", display: "+1 904 372 8921", tel: "+19043728921" },
   ],
-  mapEmbedUrl: "https://maps.app.goo.gl/dwVJEfh8ZguPSkHz5",
+  mapEmbedUrl: "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s9.777007,125.489860!6i16",
 };
 
 export const topbarLinks: string[] = [
